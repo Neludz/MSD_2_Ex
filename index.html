@@ -1,97 +1,487 @@
-<!--
- Getting Started with Web Serial Codelab (https://todo)
- Copyright 2019 Google Inc.
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-      http://www.apache.org/licenses/LICENSE-2.0
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
--->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Web Serial Code Lab</title>
     <meta charset="utf-8" />
-    <meta name="codelab" content="getting-started-w-web-serial" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script>
-      // Redirect to HTTPS if HTTP is requested.
-      if (window.location.protocol === "http:") {
-        window.location.href = "https:" + window.location.href.substring(5);
-      }
-    </script>
-    <link rel="stylesheet" href="/style.css" />
-    <script src="/script.js" defer></script>
+
+    <title>
+      MSD_2 Default Web Page
+    </title>
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="lib/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="lib/jquery-3.5.1.min.js"></script>
+    <script src="lib/script.js"></script>
+    <script src="lib/script_exchange.js"></script>
   </head>
   <body>
-    <header class="header">
-      <h1>Getting Started with Web Serial</h1>
-    </header>
-    <main class="main">
+    <div id="wrap">
+      <div class="top">
+        <div class="logo">
+          <a href="http://pluton.by"
+            ><img
+              class="logo_img"
+              ;
+              src="https://cdn.glitch.com/e84c00a2-2689-44b1-a1ae-5bbd1e6249c2%2F04-Logo.svg?v=1588452366565"
+              alt="MSD_2"
+          /></a>
+        </div>
+        <div class="logo">
+          <h2>
+            <or>M</or>одуль <or>C</or>бора <or>Д</or>анных
+            <or>2</or>
+          </h2>
+        </div>
+        <div class="logo">
+          <h3>
+            Configurator (beta version)
+          </h3>
+        </div>
+      </div>
+
+      <div class="line_thin"></div>
+      <div class="line_fat"></div>
       <div id="notSupported">
-        Sorry, <b>Web Serial</b> is not supported on this device, make sure
-        you're running Chrome 78 or later and have enabled the
-        <code>#enable-experimental-web-platform-features</code> flag in
-        <code>chrome://flags</code>
+        <h3>
+          Sorry, <b>Web Serial</b> is not supported on this device, make sure
+          you're running Chrome 78 or later and have enabled the
+          <code>#enable-experimental-web-platform-features</code> flag in
+          <code>chrome://flags</code>
+        </h3>
       </div>
-      <a href="https://glitch.com/edit/#!/remix/web-serial-codelab-start"
-        >Remix Glitch</a
-      >
-      <br />
-      <button id="butConnect" type="button">Connect</button>
-      <br />
-      <br />
-      <button id="But_Test" type="button">Test</button>
+      <div class="mid">
+        <button class="but_big" id="Connect_But">Connect</button>
+        <button class="but_big" id="Only_USB">USB Connect</button>
+        <div class="frame_val">
+          <h4>
+            Адрес
+          </h4>
 
-      <div id="microbit">
-        <span class="mb-button" id="leftBut"></span>
-        <span class="mb-matrix">
-          <div>
-            <input disabled class="led" type="checkbox" id="led-r0-c0" />
-            <input disabled class="led" type="checkbox" id="led-r0-c1" />
-            <input disabled class="led" type="checkbox" id="led-r0-c2" />
-            <input disabled class="led" type="checkbox" id="led-r0-c3" />
-            <input disabled class="led" type="checkbox" id="led-r0-c4" />
+          <input
+            type="number"
+            class="data_big"
+            id="MSD_Addr"
+            value="1"
+            name="Addr"
+            min="1"
+            max="250"
+          />
+        </div>
+
+        <div class="frame_val">
+          <h4>
+            Битрейт
+          </h4>
+
+          <select id="select_id" class="data_big">
+            <option>9600</option>
+            <option>19200</option>
+            <option>57600</option>
+            <option>115200</option>
+          </select>
+        </div>
+
+        <div class="frame_val">
+          <h4>
+            Счетчик ошибок
+          </h4>
+
+          <input
+            type="number"
+            class="data_big"
+            id="MSD_Error"
+            value="0"
+            name="Addr"
+            min="0"
+            max="100"
+          />
+        </div>
+
+        <button class="but_big" data-but="RegN-28_data-2817">Default</button>
+        <button class="but_big" data-but="RegN-28_data-2561">Reset</button>
+
+        <div <div class="row">
+          <h1>
+            Температура,°С
+          </h1>
+          <div class="data">
+            <div class="frame_val">
+              <h4>
+                T1
+              </h4>
+              <div class="data_val">
+                100,9
+              </div>
+            </div>
+            <div class="frame_val">
+              <h4>
+                T2
+              </h4>
+              <div class="data_val">
+                100,0
+              </div>
+            </div>
+            <div class="frame_val">
+              <h4>
+                T3
+              </h4>
+              <div class="data_val">
+                109,0
+              </div>
+            </div>
+            <div class="frame_val">
+              <h4>
+                T4
+              </h4>
+              <div class="data_val">
+                109,0
+              </div>
+            </div>
+            <div class="frame_val">
+              <h4>
+                T5
+              </h4>
+              <div class="data_val">
+                190,0
+              </div>
+            </div>
+            <div class="frame_val">
+              <h4>
+                T6
+              </h4>
+              <div class="data_val">
+                190,0
+              </div>
+            </div>
+            <div class="frame_val">
+              <h4>
+                T7
+              </h4>
+              <div class="data_val">
+                109,0
+              </div>
+            </div>
+            <div class="frame_val">
+              <h4>
+                T8
+              </h4>
+              <div class="data_val">
+                10
+              </div>
+            </div>
+            <div class="frame_val">
+              <h4>
+                T9
+              </h4>
+              <div class="data_val">
+                100,0
+              </div>
+            </div>
           </div>
-          <div>
-            <input disabled class="led" type="checkbox" id="led-r1-c0" />
-            <input disabled class="led" type="checkbox" id="led-r1-c1" />
-            <input disabled class="led" type="checkbox" id="led-r1-c2" />
-            <input disabled class="led" type="checkbox" id="led-r1-c3" />
-            <input disabled class="led" type="checkbox" id="led-r1-c4" />
+        </div>
+        <div class="row">
+          <h1>
+            Ток, А
+          </h1>
+          <div class="data">
+            <div class="data_val">
+              100 А
+            </div>
           </div>
-          <div>
-            <input disabled class="led" type="checkbox" id="led-r2-c0" />
-            <input disabled class="led" type="checkbox" id="led-r2-c1" />
-            <input disabled class="led" type="checkbox" id="led-r2-c2" />
-            <input disabled class="led" type="checkbox" id="led-r2-c3" />
-            <input disabled class="led" type="checkbox" id="led-r2-c4" />
+        </div>
+        <div class="row">
+          <h1>
+            Количество включений
+          </h1>
+          <div class="data">
+            <div class="frame_val">
+              <h4>
+                DI_1
+              </h4>
+              <div class="data_val">
+                100
+              </div>
+            </div>
+            <div class="frame_val">
+              <h4>
+                DI_2
+              </h4>
+              <div class="data_val">
+                ---
+              </div>
+            </div>
           </div>
-          <div>
-            <input disabled class="led" type="checkbox" id="led-r3-c0" />
-            <input disabled class="led" type="checkbox" id="led-r3-c1" />
-            <input disabled class="led" type="checkbox" id="led-r3-c2" />
-            <input disabled class="led" type="checkbox" id="led-r3-c3" />
-            <input disabled class="led" type="checkbox" id="led-r3-c4" />
+        </div>
+
+        <div class="row">
+          <h1>
+            Состояние входов
+          </h1>
+          <div class="data">
+            <div class="frame_val">
+              <h4>
+                DI_1
+              </h4>
+              <div class="data_val">
+                вкл
+              </div>
+            </div>
+            <div class="frame_val">
+              <h4>
+                DI_2
+              </h4>
+              <div class="data_val">
+                откл
+              </div>
+            </div>
+            <div class="frame_val">
+              <h4>
+                DI_3
+              </h4>
+              <div class="data_val">
+                вкл
+              </div>
+            </div>
+            <div class="frame_val">
+              <h4>
+                DI_4
+              </h4>
+              <div class="data_val">
+                вкл
+              </div>
+            </div>
           </div>
-          <div>
-            <input disabled class="led" type="checkbox" id="led-r4-c0" />
-            <input disabled class="led" type="checkbox" id="led-r4-c1" />
-            <input disabled class="led" type="checkbox" id="led-r4-c2" />
-            <input disabled class="led" type="checkbox" id="led-r4-c3" />
-            <input disabled class="led" type="checkbox" id="led-r4-c4" />
+        </div>
+
+        <div class="row">
+          <h1>
+            Состояние выходов
+          </h1>
+          <div class="data">
+            <div class="frame_hor">
+              <div class="mid_ver">
+                <button class="but_med" data-button="RegN-26_data-1">
+                  Включить
+                </button>
+                <button class="but_med" data-button="RegN-27_data-1">
+                  Отключить
+                </button>
+              </div>
+              <div class="frame_val">
+                <h4>
+                  DO_1
+                </h4>
+                <div class="data_val">
+                  вкл
+                </div>
+              </div>
+            </div>
+
+            <div class="frame_hor">
+              <div class="mid_ver">
+                <button class="but_med" data-button="RegN-26_data-2">
+                  Включить
+                </button>
+                <button class="but_med" data-button="RegN-27_data-2">
+                  Отключить
+                </button>
+              </div>
+              <div class="frame_val">
+                <h4>
+                  DO_2
+                </h4>
+                <div class="data_val">
+                  вкл
+                </div>
+              </div>
+            </div>
           </div>
-        </span>
-        <span class="mb-button" id="rightBut"></span>
+        </div>
+
+        <div class="row">
+          <h3>
+            Режим
+          </h3>
+          <div class="data">
+            <div class="frame_val">
+              <h4>
+                Температура
+              </h4>
+              <select class="data_big">
+                <option>Отключено</option>
+                <option>Включено</option>
+              </select>
+            </div>
+            <div class="frame_val">
+              <h4>
+                Ток
+              </h4>
+              <select class="data_big">
+                <option>Отключено</option>
+                <option>Включено</option>
+              </select>
+            </div>
+
+            <div class="frame_val">
+              <h4>
+                Выходы
+              </h4>
+              <select id="select_id" class="data_big">
+                <option>Отключено</option>
+                <option>Контроль температуры</option>
+                <option>Контроль тока</option>
+                <option>Контроль тока и температуры</option>
+                <option>Modbus</option>
+                <option>Modbus+задержка</option>
+                <option>Modbus+задержка+DI</option>
+              </select>
+            </div>
+
+            <div class="frame_val">
+              <h4>
+                Счетчик
+              </h4>
+              <select id="select_id" class="data_big">
+                <option>Отключено</option>
+                <option>Включено</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <h3>
+            Датчики выхода DO_1
+          </h3>
+          <div class="data">
+            <button class="but_small">T1</button>
+            <button class="but_small">T2</button>
+            <button class="but_small">T3</button>
+            <button class="but_small">T4</button>
+            <button class="but_small">T5</button>
+            <button class="but_small">T6</button>
+            <button class="but_small">T7</button>
+            <button class="but_small">T8</button>
+            <button class="but_small">T9</button>
+          </div>
+        </div>
+        <div class="row">
+          <h3>
+            Датчики выхода DO_2
+          </h3>
+          <div class="data">
+            <button class="but_small">T1</button>
+            <button class="but_small">T2</button>
+            <button class="but_small">T3</button>
+            <button class="but_small">T4</button>
+            <button class="but_small">T5</button>
+            <button class="but_small">T6</button>
+            <button class="but_small">T7</button>
+            <button class="but_small">T8</button>
+            <button class="but_small">T9</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <h3>
+            Задержка
+          </h3>
+          <div class="data">
+            <div class="frame_val">
+              <h4>
+                DO_1
+              </h4>
+              <input
+                type="number"
+                class="data_super_big"
+                id="addr"
+                value=""
+                name="Addr"
+                min="1"
+                max="250"
+              />
+            </div>
+            <div class="frame_val">
+              <h4>
+                DI_2
+              </h4>
+              <input
+                type="number"
+                class="data_super_big"
+                id="addr"
+                value=""
+                name="Addr"
+                min="1"
+                max="250"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <h3>
+            Уровень срабатывания
+          </h3>
+          <div class="data">
+            <div class="frame_val">
+              <h4>
+                Предупредительный
+              </h4>
+              <input
+                type="number"
+                class="data_super_big"
+                id="addr"
+                value=""
+                name="Addr"
+                min="1"
+                max="250"
+              />
+            </div>
+            <div class="frame_val">
+              <h4>
+                Аварийный
+              </h4>
+              <input
+                type="number"
+                class="data_super_big"
+                id="addr"
+                value=""
+                name="Addr"
+                min="1"
+                max="250"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <h3>
+            Битрейт
+          </h3>
+          <select id="select_id" class="any_75">
+            <option>9600</option>
+            <option>19200</option>
+            <option>57600</option>
+            <option>115200</option>
+          </select>
+        </div>
+        <div class="row">
+          <h3>
+            Адрес Modbus (RS485)
+          </h3>
+
+          <input
+            type="number"
+            class="any_74"
+            id="addr"
+            name="Addr"
+            min="1"
+            max="250"
+          />
+        </div>
       </div>
-
-      <pre id="log"></pre>
-    </main>
+    </div>
   </body>
 </html>

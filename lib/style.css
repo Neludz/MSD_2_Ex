@@ -1,0 +1,265 @@
+/* CSS files add styling rules to your content */
+
+body {
+  color: #202020;
+  font-family: arial, helvetica, serif;
+  font-size: 14px;
+  line-height: 1.5em;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  background: white;
+}
+
+h1 {
+  color: #ed4600;
+  font-size: 16px;
+  margin: 3px 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+h2 {
+  color: #074762;
+  font-size: 18px;
+  border-right: solid 2px #e6e6e6;
+  border-left: solid 2px #e6e6e6;
+  padding: 10px;
+}
+h3 {
+  color: #074762;
+  font-size: 14px;
+  margin: 3px 3px;
+}
+h4 {
+  color: #074762;
+  font-size: 14px;
+  margin: 0px 0px;
+}
+Or {
+  color: #ed4600;
+}
+
+a {
+  color: #000000;
+}
+
+#wrap {
+  height: 100%;
+  width: 100%;
+  max-width: 900px;
+  border-right: solid 1px #e6e6e6;
+  border-left: solid 1px #e6e6e6;
+  margin: 0px auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.logo {
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-left: 25px;
+}
+
+.logo_img {
+  width: 164px;
+}
+
+.line_thin {
+  border-top: 4px solid #074762;
+  width: 100%;
+  padding-top: 2px;
+}
+.line_fat {
+  border-top: 19px solid #0747629a;
+  width: 100%;
+  top: 7px;
+  padding-top: 2px;
+  padding-bottom: 4px;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.row {
+  width: 850px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 5px;
+  padding-right: 0px;
+  align-items: center;
+  flex-wrap: nowrap;
+  border: 1px solid #074762;
+  border-radius: 4px;
+}
+
+.frame_val {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  align-items: center;
+  border: 1px solid #074762;
+  border-radius: 4px;
+  margin: 3px 3px;
+}
+
+.frame_hor {
+  align-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  align-items: center;
+  border: 1px solid #074762;
+  border-radius: 4px;
+  margin: 3px 3px;
+}
+
+.mid_ver {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  align-items: center;
+  border: 0px solid #074762;
+  border-radius: 0px;
+  margin: 0px 0px;
+}
+
+.data {
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  flex-basis: 75%;
+  margin: 3px 3px;
+}
+
+.data_big {
+  min-width: 108px;
+  margin: 3px 3px;
+}
+.data_super_big {
+  min-width: 150px;
+  margin: 3px 3px;
+}
+
+.data_val {
+  padding-left: 5px;
+  padding-right: 5px;
+  min-width: 45px;
+  background-color: #074762;
+  color: white;
+  border-radius: 4px;
+  margin: 3px 3px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.any_75 {
+  flex-basis: 75%;
+}
+
+.any_74 {
+  flex-basis: 74%;
+}
+
+input {
+  border: 1px solid #074762;
+  min-width: 50px;
+  background-color: #074762;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+  padding: 2px;
+  margin: 3px 3px;
+}
+input:hover {
+  background-color: #ed4600;
+  color: white;
+}
+input:focus {
+  outline: none;
+}
+select {
+  overflow: hidden;
+  border: 1px solid #074762;
+  min-width: 50px;
+  text-align-last: center;
+  font-size: 14px;
+  border-radius: 4px;
+  background-color: #074762;
+  color: white;
+  margin: 3px 3px;
+  padding: 2px;
+}
+
+select:hover {
+  background-color: #ed4600;
+  color: white;
+}
+select:focus {
+  outline: none;
+}
+button {
+  background-color: #074762;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+  margin: 3px 3px;
+  padding: 2px;
+}
+button.but_big {
+  width: 120px;
+  height: 50px;
+  margin: 3px 3px;
+}
+
+button.but_small {
+  min-width: 60px;
+  margin: 3px 3px;
+}
+
+button.but_med {
+  width: 140px;
+  margin: 3px 3px;
+}
+
+button:hover {
+  background-color: #ed4600;
+}
+button:focus {
+  outline: none;
+}
+button:active {
+  transition-duration: 0s;
+  box-shadow: 0 0 0 4px #cbd6ee;
+}
