@@ -1,53 +1,37 @@
-# Code Lab: Getting Started with Web Serial
+Welcome to Glitch
+=================
 
-For complete instructions, see the [Web Serial code lab][codelab]
+Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
 
-## What you’ll build
+**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
 
-In this codelab, you'll build a web page that uses Web Serial interacts with
-a micro:bit board to show different images on its 5x5 LED matrix. You'll learn
-about Web Serial, and how to use Readable, Writeable, and Transform Streams
-to communicate with serial devices in the browser.
+Find out more [about Glitch](https://glitch.com/about).
 
-## What you’ll learn
 
-* How to open and close a Web Serial port
-* How to use a read loop to handle data from an input stream
-* How to send data out via a write stream
+Your Project
+------------
 
-## What you’ll need
+### ← README.md
 
-* A [BBC micro:bit board](https://microbit.org/) with the latest
-  [Espruino firmware](https://www.espruino.com/Download#microbit)
-* A recent version of Chrome (78 or later)
-* Knowledge of HTML, CSS, JavaScript, and Chrome DevTools.
+That's this file, where you can tell people what your cool website does and how you built it.
 
-We chose to use the micro:bit for this codelab because it’s easily affordable,
-offers a few inputs (buttons) and outputs (5x5 LED display), and can also
-provide additional inputs and outputs. See
-[BBC micro:bit](https://www.espruino.com/MicroBit) page on the Espruino site
-for details on what the micro:bit is capable of.
+### ← index.html
 
-## Getting started
+Where you'll write the content of your website. 
 
-To get started, check out the [code lab instruction][codelab]
+### ← style.css
 
-## License
+CSS files add styling rules to your content.
 
-Copyright 2019 Google, Inc.
+### ← script.js
 
-Licensed to the Apache Software Foundation (ASF) under one or more contributor
-license agreements. See the NOTICE file distributed with this work for
-additional information regarding copyright ownership. The ASF licenses this
-file to you under the Apache License, Version 2.0 (the “License”); you may not
-use this file except in compliance with the License. You may obtain a copy of
-the License at
+If you're feeling fancy you can add interactivity to your site with JavaScript.
 
-http://www.apache.org/licenses/LICENSE-2.0
+### ← assets
 
-Unless required by applicable law or agreed to in writing, software distributed
-under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR
-CONDITIONS OF ANY KIND, either express or implied. See the License for the
-specific language governing permissions and limitations under the License.
+Drag in `assets`, like images or music, to add them to your project
 
-[codelab]: https://goo.gle/web-serial-codelab
+Made by [Glitch](https://glitch.com/)
+-------------------
+
+\ ゜o゜)ノ
